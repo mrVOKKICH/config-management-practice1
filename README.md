@@ -43,12 +43,13 @@
 
 ```sh
 ./run.sh                 # Linux/macOS (Windows: run.bat)
-make test                # тесты (unittest)
+python -m unittest -v    # тесты (из корня репозитория)
 sh scripts/stage2_params.sh   # проверка параметров (Windows: .bat)
 ```
 
-Без `make`: `PYTHONPATH=src python3 -m unittest discover -s tests -v`
-(Windows: `set PYTHONPATH=src` и `python -m unittest discover -s tests -v`).
+Тесты запускаются из корня репозитория и не требуют настройки путей
+(Windows: `python -m unittest -v`, Linux/macOS: `python3 -m unittest -v`).
+Также работает `make test`.
 
 ## 4. Примеры использования
 

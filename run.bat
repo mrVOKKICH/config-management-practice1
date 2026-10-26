@@ -3,4 +3,9 @@ chcp 65001 >nul
 rem Запуск эмулятора: run.bat [--vfs-path ПУТЬ] [--script СКРИПТ]
 set PYTHONPATH=%~dp0src
 set PYTHONUTF8=1
-python -m emulator %*
+where python >nul 2>nul
+if %errorlevel%==0 (
+    python -m emulator %*
+) else (
+    py -3 -m emulator %*
+)
